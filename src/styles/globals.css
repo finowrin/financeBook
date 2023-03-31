@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+
+body,
+body[data-theme="light"] {
+  --color-text-primary: #302820ce;
+  --color-text-secondary: #076963;
+  --color-image-background: rgba(255, 255, 255, 0.4);
+  --color-bg-primary: rgba(190, 243, 209, 0.418);
+  --color-bg-toggle: #1e90ff;
+  --color-box-shadow: 10px 5px 6px rgba(0, 0, 0, 0.3);
+  --color-logo-shadow: rgba(0, 0, 0, 0.8);
+  --color-container-background: rgba(255, 255, 255, 0.5);
+  --color-scheme: light;
+}
+
+body[data-theme="dark"] {
+  --color-text-primary: #e3e3e3b3;
+  --color-text-secondary: #f27405;
+  --color-bg-primary: #15232d;
+  --color-bg-toggle: #a9a9a9;
+  --color-image-background: rgba(10, 10, 10, 0.4);
+  --color-box-shadow: 10px 5px 6px rgba(206, 201, 201, 0.359);
+  --color-logo-shadow: #0fa;
+  --color-container-background: rgba(0, 0, 0, 0.5);
+  --color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background 0.25s ease-in-out;
+}
+
+/* scroll bar */
+
+html {
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--color-bg-primary);
+}
+body::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--color-bg-primary);
+}
+
+h1 {
+  color: var(--color-text-secondary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+/* logo */
+
+h1 {
+  font-size: 4.2rem;
+  color: var(--color-text-primary);
+  text-shadow: 0 0 7px var(--color-text-primary),
+    0 0 10px var(--color-text-primary), 0 0 21px var(--color-text-primary),
+    0 0 42px var(--color-logo-shadow), 0 0 82px var(--color-logo-shadow),
+    0 0 92px var(--color-logo-shadow), 0 0 102px var(--color-logo-shadow),
+    0 0 151px var(--color-logo-shadow);
+  font-family: "Rajdhani";
+}
+
+/* h1 {
+  font-size: 4.2rem;
+  animation: flicker 2s infinite alternate;
+} */
+
+/* Flickering animation
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px var(--color-text-primary),
+      0 0 11px var(--color-text-primary), 0 0 19px var(--color-text-primary),
+      0 0 40px var(--color-logo-shadow), 0 0 80px var(--color-logo-shadow),
+      0 0 90px var(--color-logo-shadow), 0 0 100px var(--color-logo-shadow),
+      0 0 150px var(--color-logo-shadow);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+} */
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-name {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  color: var(--color-text-primary);
+  letter-spacing: 0.25rem;
+  font-family: "Rajdhani";
+}
+
+/* Input */
+.input-container {
+  border: var(--color-text-secondary) 2px solid;
+  width: 100%;
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+}
+
+.input-label {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+.input-box {
+  height: 100%;
+  border: none;
+  height: 3rem;
+  width: 100%;
+  margin-left: 0.16rem;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-text-primary);
+}
+
+.input-box:focus {
+  outline: none;
+}
+
+.input-box::placeholder {
+  color: var(--color-text-primary);
+  opacity: 0.8;
+}
+
+.input-logo {
+  padding-inline: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.error {
+  color: red;
+  font-size: smaller;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* hisab kitab section */
+
+.io-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  border-radius: 20;
+}
+
+.io {
+  display: flex;
+  width: 76%;
+  margin: auto;
+  padding-top: 1.4rem;
+  border-radius: 1.4rem;
+  background-color: var(--color-container-background);
+  box-shadow: var(--color-box-shadow);
+}
+input {
+  color-scheme: var(--color-scheme);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-text-primary) !important;
+}
+
+.border-io {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding-bottom: 1.3rem;
+}
+
+.knownPersonList {
+  position: absolute;
+  background-color: var(--color-bg-primary);
+  width: 5rem;
+  height: 4.8rem;
+  overflow: auto;
+  top: 1.2rem;
+  left: 0.8rem;
+}
+
+/* button*/
+
+.button {
+  background-color: #50d5ea;
+  border: 0 solid #e5e7eb;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 20px 0;
+}
+
+.button-disabled {
+  background-color: grey;
+}
+
+.button-delete {
+  background-color: red;
+  width: 40%;
+}
+
+.button-cancel {
+  width: 40%;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 0.75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* buttonStyle2 */
+.button2 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-2:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-2 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-2 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-2:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
